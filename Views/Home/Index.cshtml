@@ -1,31 +1,43 @@
-﻿﻿@{
+﻿﻿@*Or do you add the @model int here????*@
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div style="text-align: center;">
+@model Survey
+<div class="text-center">
     <form action="/addStudent" method="POST">
-    <div>
-        <label for="">Your Name</label>
-        <input type="text" name="Name" id="">
+    <div class="mb-3">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control">
     </div>
-    <div>
-        <label for="">Dojo Location</label>
-        <select name="Location" id="">
+    <div class="mb-3">
+        <label asp-for="Location"></label>
+        <select asp-for="Location" class="form-control">
             <option value="San Jose">San Jose</option>
             <option value="Texas">Texas</option>
+            <option value="Burbank">Burbank</option>
+            <option value="New York">New York</option>
+            <option value="Chicago">Chicago</option>
         </select>
     </div>
-    <div>
-        <label for="">Favorite Language</label>
-        <select name="Language" id="">
+    <div class="mb-3">
+        <label asp-for="Language"></label>
+        <select asp-for="Language" class="form-control">
             <option value="C#">C#</option>
             <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
         </select>
     </div>
-    <p>Comment (Optional):</p>
-    <textarea name="Comment" id="" cols="30" rows="10"></textarea>
-    <div>
-    <button type="submit">Submit</button>
+    <div class="mb-3">
+
+    <label asp-for="Comment"></label>
+    <textarea name="Comment" class="form-control"></textarea>
     </div>
+    
+    <input type="submit" value="Submit" class="btn btn-primary">
+    
     </form>
 </div>
