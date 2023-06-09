@@ -6,35 +6,41 @@
 
 @model Survey
 <div class="text-center">
-    <form action="/addStudent" method="POST">
+    <form asp-action="Process" asp-controller="Home" method="POST">
     <div class="mb-3">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Location"></label>
         <select asp-for="Location" class="form-control">
+            <option type="hidden">Select a city</option>
             <option value="San Jose">San Jose</option>
             <option value="Texas">Texas</option>
             <option value="Burbank">Burbank</option>
             <option value="New York">New York</option>
             <option value="Chicago">Chicago</option>
         </select>
+        <span asp-validation-for="Location"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Language"></label>
         <select asp-for="Language" class="form-control">
+            <option type="hidden">Select a Language</option>
             <option value="C#">C#</option>
             <option value="Javascript">Javascript</option>
             <option value="Python">Python</option>
             <option value="Java">Java</option>
             <option value="C++">C++</option>
         </select>
+        <span asp-validation-for="Language"></span>
     </div>
     <div class="mb-3">
 
     <label asp-for="Comment"></label>
     <textarea name="Comment" class="form-control"></textarea>
+    <span asp-validation-for="Comment"></span>
     </div>
     
     <input type="submit" value="Submit" class="btn btn-primary">
